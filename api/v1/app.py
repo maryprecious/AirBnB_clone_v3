@@ -28,6 +28,8 @@ def not_found(error):
     return jsonify({'error': 'Not found'}), 404
 
 if __name__ == '__main__':
+    """Running condition
+    """
     app.run(host=getenv('HBNB_API_HOST'),
             port=getenv('HBNB_API_PORT'),
             threaded=True)
