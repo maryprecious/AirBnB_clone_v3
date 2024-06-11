@@ -2,3 +2,12 @@
 """
 Index html link
 """
+
+
+from api.v1.views import app_views
+from flask import Flask, jsonify
+
+@app_views.route('/status', methods=['GET')
+def status():
+    """Teyire working"""
+    return jsonify({"status": "Ok"})
