@@ -3,7 +3,7 @@
 Index html link
 """
 
-
+from models import storage
 from api.v1.views import app_views
 from flask import Flask, jsonify
 
@@ -12,5 +12,10 @@ from flask import Flask, jsonify
 
 @app_views.route('/status', methods=['GET'])
 def status():
-    """Teyire working"""
+    """Get Status"""
     return jsonify({"status": "OK"})
+
+@app_views.route('/api/v1/stats', methods=['GET'])
+def stats():
+    """Gettings stats"""
+    return jsonify({storage.count(): 'age'})
